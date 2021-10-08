@@ -9,9 +9,12 @@ from colorama import *
 import pyautogui
 import undetected_chromedriver as uc
 import time
+import json
 init()
-email = ""
-password = ""
+with open("config.json") as f:
+    config = json.loads(f.read())
+email = config['email']
+password = config['password']
 print(f'''{Fore.RED}
  _   _                     ___  ________  ______    _ _                        
 | \ | |                    |  \/  /  __ \ |  ___|  | | |                       
